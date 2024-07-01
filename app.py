@@ -6,17 +6,15 @@ import numpy as np
 import pandas as pd
 st.title('Recognition of a dynamic handwritten signature')
 # Добавление загрузчика файлов
-columns=['x', 'y', 'z', 'az', 'in','us','num']
-image_file = st.file_uploader('Load a signature')
+columns=['x', 'y', 'z', 'az', 'in']
+image_file = st.file_uploader('Load a signature', type={"csv", "txt"})
 #image_file='1.txt'
 # Выполнение блока, если загружено изображение
 if image_file is not None:
-        datas = pd.read_csv(image_file, sep="	", names=columns)
-  datas['us']=0
-  datas['num']=0 #int(m[0])
+  datas = pd.read_csv(image_file, sep="	", names=columns)
   Text_test=datas.to_numpy()
   WIN_SIZE   = 1000
-  text_test00=np.reshape(Text_test,(1,1000,7))
+  text_test00=np.reshape(Text_test,(1,1000,5))
   x_testt=text_test00[:,:,0:5]
   x_test = np.asarray(x_testt).astype(np.float32)
   col1, = st.columns(1)
@@ -28,7 +26,7 @@ if image_file is not None:
   d = {"x": x, "y": y}
   # метки строк создаются автоматически
   chart_data = pd.DataFrame(d)
-  st.line_chart(chart_data, x="x", y="y", color="#FF0000")
-  ###results = process(image_file)
-  ###col1.text(f'Person id {results[0]}')
+  st.scatter_chart(chart_data, x="x", y="y", color="#FF0000")
+  results = process(x_test)
+  col1.text(f'Person id {results[0]}')
   #col1.image(results[1])
