@@ -4,10 +4,10 @@ from PIL import Image
 from segment import process
 import numpy as np
 import pandas as pd
-st.title('Recognition of a dynamic handwritten signature')
+st.title('Нейросетевой модуль биометрической аутентификации личности по динамике рукописной подписи')
 # Добавление загрузчика файлов
 columns=['x', 'y', 'z', 'az', 'in']
-image_file = st.file_uploader('Load a signature', type={"csv", "txt"})
+image_file = st.file_uploader('Загрузите файл подписи', type={"csv", "txt"})
 #image_file='1.txt'
 # Выполнение блока, если загружено изображение
 if image_file is not None:
