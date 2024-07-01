@@ -5,7 +5,6 @@ import pandas as pd
 from PIL import Image
 import re
 import os
-import matplotlib.pyplot as plt
 MODEL_NAME = 'model.h5';
 model = load_model(MODEL_NAME)
 
