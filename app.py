@@ -28,5 +28,5 @@ if image_file is not None:
   chart_data = pd.DataFrame(d)
   st.scatter_chart(chart_data, x="x", y="y", color="#FF0000")
   results = process(x_test)
-  col1.text(f'Person id {results[0]}')
+  col1.text(f'Идентификатор пользователя id {results[0]}')
   #col1.image(results[1])
