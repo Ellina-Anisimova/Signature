@@ -4,7 +4,6 @@ from tensorflow.keras.models import load_model
 import pandas as pd
 from PIL import Image
 import re
-import gdown
 import os
 import matplotlib.pyplot as plt
 MODEL_NAME = 'model.h5';
