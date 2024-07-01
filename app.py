@@ -31,6 +31,6 @@ if image_file is not None:
   # метки строк создаются автоматически
   chart_data = pd.DataFrame(d)
   st.line_chart(chart_data, x="x", y="y", color="#FF0000")
-  results = process(image_file)
-  col1.text(f'Person id {results[0]}')
+  ###results = process(image_file)
+  ###col1.text(f'Person id {results[0]}')
   #col1.image(results[1])
