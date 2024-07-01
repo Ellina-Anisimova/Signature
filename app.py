@@ -4,7 +4,6 @@ from PIL import Image
 from segment import process
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
 st.title('Recognition of a dynamic handwritten signature')
 # Добавление загрузчика файлов
 columns=['x', 'y', 'z', 'az', 'in','us','num']
