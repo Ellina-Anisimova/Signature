@@ -11,8 +11,7 @@ image_file = st.file_uploader('Load a signature')
 #image_file='1.txt'
 # Выполнение блока, если загружено изображение
 if image_file is not None:
-  with open(f'{image_file}', 'r') as f:
-       datas = pd.read_csv(f, sep="	", names=columns)
+        datas = pd.read_csv(image_file, sep="	", names=columns)
   datas['us']=0
   datas['num']=0 #int(m[0])
   Text_test=datas.to_numpy()
