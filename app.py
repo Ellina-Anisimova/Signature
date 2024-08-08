@@ -28,7 +28,7 @@ if image_file is not None:
   chart_data = pd.DataFrame(d)
   st.scatter_chart(chart_data, x="x", y="y", color="#0000FF",size=30)
   results = process(x_test)
-  if results[0]!='ПОДДЕЛЬНАЯ':
+  if results[0]!=' ПОДДЕЛЬНАЯ':
     col1.text(f'Подпись принадлежит пользователю с идентификатором {results[0]}')
   else:
     col1.text(f'Подпись {results[0]}')
